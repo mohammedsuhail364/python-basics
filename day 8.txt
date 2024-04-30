@@ -1,0 +1,70 @@
+minion game:-
+-----------
+
+n="banana"
+kevin=0
+stuart=0
+for i in range(len(n)):
+      if n[i] in "aeiou":
+          #kevin.append(n[i:j+1])
+          kevin+=len(n)-i
+      else:
+          #stuart.append(n[i:j+1])
+          stuart+=len(n)-i
+if kevin>stuart:
+        print("kavin wins")
+else:
+        print("stuart wins")
+
+output:
+-------
+
+9
+12
+
+stuart wins
+
+guessing number using cow_bull:-
+--------------------------------
+
+import random
+import sys
+def secret():
+        secretcode=random.randint(1000,10000)
+        print(secretcode)
+        a=set(str(secretcode))
+        b=str(secretcode)
+        if len(a)==len(b):
+                numberoftries=int(input("how many tries you want: "))
+                for i in range(numberoftries):
+                        bull=0
+                        cow=0
+                        guess=input("tell your quess: ")
+                        print(guess)
+                        a=set(guess)
+                        if len(a)==len(guess):
+                                if b==guess:
+                                        print("you guessed right")
+                                        sys.exit()
+                                for i in range(len(b)):
+                                        for j in range(len(guess)):
+                                                if b[i] == guess[j]:
+                                                        if i==j:
+                                                                bull+=1
+                                                        else:
+                                                                cow+=1
+                                print("bull:",bull,"cow",cow)
+                        else:
+                                print("your guess has repeatation")
+        else:
+                secret()
+secret()
+
+output:-
+-------
+
+1960
+how many tries you want: 2
+tell your quess: 1960
+1960
+you guessed right

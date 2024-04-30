@@ -1,0 +1,167 @@
+binary search:
+-------------
+def binarysearch(n,low,length,a):
+    while(low<=length):
+        mid=(low+length)//2
+        if a==n[mid]:
+           return mid
+        elif a>n[mid]:
+            low=mid+1
+        elif a<n[mid]:
+            length=mid-1
+    return "no"
+n=[4,3,5,2,6,1,10,7,8,9]
+a=int(input())
+n1=n.sort()
+low=0
+length=len(n)-1
+print(binarysearch(n,low,length,a))
+
+
+output:-
+--------
+10
+9
+
+binary search using recurrsive function:
+---------------------------------------
+
+def binarysearch(n,low,length,a):
+    if (low<=length):
+        mid=(low+length)//2
+        if a==n[mid]:
+           return mid
+        elif a>n[mid]:
+            return binarysearch(n,mid+1,length,a)
+        elif a<n[mid]:
+            return binarysearch(n,low,mid-1,a)
+    return "no"
+n=[4,3,5,2,6,1,10,7,8,9]
+a=int(input())
+n1=n.sort()
+low=0
+length=len(n)-1
+print(binarysearch(n,low,length,a))
+
+output:
+-------
+
+10
+9
+
+bubble sort:-
+------------
+
+n=[5,4,3,2,1]
+for i in range(len(n)-1):
+    for j in range(1,len(n)-1):
+        if n[i]>n[j]:
+            n[i],n[j]=n[j],n[i]
+print(n)
+
+
+output:-
+-------
+
+[1,2,3,4,5] 
+
+insertionsort:-
+--------------
+
+def insertion(li):
+    for i in range(1, len(li)):
+        b = i
+        while b > 0 and li[b] < li[b - 1]:
+            li[b - 1], li[b] = li[b], li[b - 1]
+            b-=1
+    print(li)
+li = [5, 6, 4, 3, 2, 1]
+insertion(li)
+
+output:-
+-------
+
+[1, 2, 3, 4, 5, 6]      
+
+mergesort:-
+----------
+
+def mergesort(li):
+    if len(li)>1:
+        mid=len(li)//2
+        left=li[:mid]
+        right=li[mid:]
+        print("left",left,"right",right)
+        mergesort(left)
+        mergesort(right)
+        i=0
+        j=0
+        k=0
+        while i<len(left) and j<len(right):
+            if left[i]<=right[j]:
+                li[k]=left[i]
+                i+=1
+            else:
+                li[k]=right[j]
+                j+=1
+            k+=1
+        while i<len(left):
+            li[k]=left[i]
+            i+=1
+            k+=1
+        while j<len(right):
+            li[k]=right[j]
+            j+=1
+            k+=1
+        print(li)
+li=[8,4,9,6]
+mergesort(li)
+
+output:-
+-------
+
+left [8, 4] right [9, 6]
+left [8] right [4]
+[4, 8]
+left [9] right [6]
+[6, 9]
+[4, 6, 8, 9]
+
+quicksort:-
+-----------
+
+def pivot(list1,fisrt,last):
+    pivot=list1[fisrt]
+    left=fisrt+1
+    right=last
+    while True:
+        while left<=right and list1[left]<=pivot:
+            left=left+1
+        while left<=right and list1[right]>=pivot:
+            right=right-1
+        if left > right:
+            break
+        else:
+            list1[left],list1[right]=list1[right],list1[left]
+    list1[fisrt],list1[right]=list1[right],list1[fisrt]
+    return right
+def quicksort(list1,fisrt,last):
+    if(fisrt<last):
+        p=pivot(list1,fisrt,last)
+        quicksort(list1,fisrt,p-1)
+        quicksort(list1,p+1,last)
+list1=[56,26,93,17,31,44]
+n=len(list1)
+quicksort(list1,0,n-1)
+print(list1)
+
+output:-
+-------
+
+[17, 26, 31, 44, 56, 93]
+
+
+
+
+
+

@@ -1,0 +1,55 @@
+1)to sort the given string of second elements and also should captalize the second element and print.
+
+program:-
+--------
+
+n=input().split()
+li=[]
+li1=[]
+li2=[]
+for i in range(len(n)):
+    li.append([])
+    li[i].append(n[i][1])
+    li[i].append(i)
+li.sort()
+for i in range(len(li)):
+    li1.append(n[li[i][1]])
+for i in li1:
+    li2.append(i[0]+i[1].upper()+i[2:])
+print(' '.join(li2))
+
+output:-
+-------
+
+suhail is good boy
+gOod bOy iS sUhail
+
+2)a string contains alphabets and commas and special characters and reverse the alphabets and commas but special characters print on the same index number as well as given input but all should be reverse.
+
+program:-
+---------
+
+li="ab@@@b,a"
+li1=list(li)
+li2=[]
+li3=[]
+i=0
+for x in range(len(li1)):
+    if li[x].isalnum() == False and li[x]!=',':
+        li2.append([])
+        li2[i].append(li1[x])
+        li2[i].append(x)
+        i+=1
+for i in li1:
+    if i.isalnum()==True or i==',':
+        li3.append(i)
+li3=li3[::-1]
+for i in range(len(li2)):
+    li3.insert(li2[i][1],li2[i][0])
+print(''.join(li3))
+
+output:-
+--------
+
+a,@@@bba
+

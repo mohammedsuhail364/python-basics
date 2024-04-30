@@ -1,0 +1,23 @@
+1)shifting letters says that we have given a string s and an array shifts.
+now for each shifts[i]=x we want the first i+ 1 letters of s,x times.we have to return the final string after all shifts are applied 
+explanation:-
+------------
+we start with "abc"
+after shifting the first letter of s by 3 we have "dbc"
+after shifting the first 2 letters of s by 5,we have"igc"
+after shifting the first 3 letters of s by 9,we have "rpl"
+
+program:-
+--------
+n="abc"
+li=[3,5,9]
+li1=[]
+for i in range(len(li)):
+    s=ord(n[i])+sum(li[i:])
+    li1.append(chr(s))
+print("".join(li1))
+
+output:-
+-------
+
+rpl

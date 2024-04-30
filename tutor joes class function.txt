@@ -1,0 +1,59 @@
+__init__ function:
+-------------------
+
+class user:
+      def __init__(self,name):
+            print("suhail suhail")
+            self.name= name
+      def printall(self):
+            print("name :",self.name)
+o=user("hi")
+o.printall()
+print(o.__dict__)
+o1=user("suhail")
+print(o1.__dict__)
+o1.printall()
+print(user.__dict__)
+
+output:-
+-------
+
+suhail suhail
+name : hi
+{'name': 'hi'}
+suhail suhail
+{'name': 'suhail'}
+name : suhail
+{'__module__': '__main__', '__init__': <function user.__init__ at 0x0000024486983CE0>, 'printall': <function user.printall at 0x0000024486983E20>, '__dict__': <attribute '__dict__' of 'user' objects>, '__weakref__': <attribute '__weakref__' of 'user' objects>, '__doc__': None}
+
+property decorator:-
+------------------
+
+class user:
+      def __init__(self,name,age):
+            print("suhail suhail")
+            self.name= name
+            self.age= age
+      @property
+      def msg(self):
+            return self.name + " is " +str(self.age)+" years old "
+o=user("suhail",21)
+print(o.name)
+print(o.age)
+print(o.msg)
+o.age=34
+print(o.msg)
+
+output:-
+---------
+
+suhail suhail
+suhail
+21
+suhail is 21 years old 
+suhail is 34 years old 
+
+property decorator (setter,getter):-
+-----------------------------------
+
+Books: Consider reading books on JavaScript programming. Some popular titles include "Eloquent JavaScript" by Marijn Haverbeke, "JavaScript: The Good Parts" by Douglas Crockford, and "You Don't Know JS" series by Kyle Simpson.

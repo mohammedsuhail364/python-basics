@@ -1,0 +1,35 @@
+data structure linked list:
+--------------------------
+
+class Node:
+    def __init__(self,data) -> None:
+        self.data=data
+        self.next=None
+class Linkedlist:
+    def __init__(self) -> None:
+        self.head=None
+    def create(self):
+        inp=int(input("enter your data: "))
+        node=Node(data=inp)
+        if self.head==None:
+            self.head=node
+            self.temp=self.head
+        else:
+            self.temp.next=node
+            self.temp=self.temp.next
+    def display(self):
+        self.temp=self.head
+        while self.temp:
+           print(self.temp.data)
+           self.temp=self.temp.next
+a=Linkedlist()
+a.create()
+a.create()
+a.display()
+
+output:-
+-------
+enter your data: 10
+enter your data: 20
+10
+20

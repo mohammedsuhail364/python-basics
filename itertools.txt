@@ -1,0 +1,39 @@
+itertools using combinations:-
+-----------------------------
+from itertools import combinations
+li="suh"
+a=list(combinations(sorted(li),2))
+print(a)
+for i in a:
+    print("".join(i))
+
+output:-
+-------
+
+[('h', 's'), ('h', 'u'), ('s', 'u')]
+hs
+hu
+su
+
+itertools using permutations:-
+-----------------------------
+
+from itertools import permutations
+li="suh"
+a=list(permutations(li,2))
+print(a)
+for i in a:
+    print("".join(i))
+
+output:-
+-------
+
+[('s', 'u'), ('s', 'h'), ('u', 's'), ('u', 'h'), ('h', 's'), ('h', 'u')]
+su
+sh
+us
+uh
+hs
+hu
+
+

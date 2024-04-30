@@ -1,0 +1,79 @@
+1)write a program to sort the elements in odd positions in decending order and elements in ascending order.
+
+program:-
+--------
+
+li=[13,2,4,15,12,10,5]
+li1=[]
+li2=[]
+x=0
+for i in range(len(li)):
+    if i%2==0:
+        li1.append(li[i])
+    else:
+        li2.append(li[i])
+li1.sort(reverse=True)
+li2.sort()
+i=1
+for x in range(len(li2)):
+    li1.insert(i,li2[x])
+    i+=2
+print(li1)
+
+
+output:-
+--------
+
+[13, 2, 12, 10, 5, 15, 4]
+
+2)to find the factors of the numbers given in an list and to sort the numbers in decending order according to the factors present in it:
+
+program:
+--------
+li=[8,2,3,12,16]
+li1=[]
+for x in li:
+    count=1
+    for i in range(1,(x//2)+1):
+        if x%i==0:
+            count+=1
+    li1.append([count,x])
+li1.sort(reverse=True)
+for i in range(len(li1)):
+    print(li1[i][1],end=' ')
+    
+output:-
+-------
+
+12 16 8 3 2
+
+3)given a set of N nnumbers and the rules provided below to calculate theri weights the program must sort the numbers based on their weight and print the numbers in ascending order
+rules to calculate weight:
+- 5 marks if a perfect square
+- 4 if multilpe of 4 and divisible by 6.
+- 3 if even number
+
+program:-
+---------
+
+import math
+li=[10,36,54,49,12]
+li1=[]
+for x in li:
+    c=0
+    if x%4==0 and x%6==0:
+        c+=4
+    s=int(math.sqrt(x))
+    if s*s==x:
+        c+=5
+    if x%2==0:
+        c+=3
+    li1.append([c,x])
+li1.sort(reverse=True)
+for i in range(len(li1)):
+    print(li1[i][1],end=' ')      
+
+output:-
+-------
+
+36 12 49 54 10 

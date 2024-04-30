@@ -1,0 +1,66 @@
+def inversion(li,count):
+    for i in range(len(li)):
+        for j in range(i+1,len(li)):
+            if li[i]>li[j]:
+                print(li[i],li[j])
+                count+=1
+    return count
+               
+li=list(map(int,input().split()))
+count=0
+print(inversion(li,count))
+
+problem 2:
+---------
+
+li=[2,1,2,5,7,1,9,8,8]
+li1=[2,1,8,3]
+li2=[]
+li3=[]
+for i in li1:
+    for j in li:
+        if i==j:
+            li2.append(j)
+        if j not in li1:
+            li3.append(j)
+s=set(li3)
+a=list(s)
+for i in range(len(a)):
+    for j in range(i+1,len(a)):
+        if a[i]>a[j]:
+            a[i],a[j]=a[j],a[i]
+print(li2+a)
+
+output:-
+-------
+
+[2, 2, 1, 1, 8, 8, 5, 7, 9]
+
+problem 3:-
+----------
+check if it is possible to sort an array with conditional swapping of adjacent allowed.
+we are given an unsorted array of integers in the range from 0 to n-1.we are allowed to swap adjacent elements in array many number of times but only if the absolute differnce between these element is is 1.check if it is possible to sort the array . if yes then print"Yes" else "no".
+
+answer:-
+-------
+
+li=list(map(int,input().split()))
+count=0
+for i in range(len(li)-1):
+    if abs(li[i]-li[i+1])==1:
+        count+=1
+if count==len(li)//2:
+    print("Yes")
+else:
+    print("no")
+
+output:-
+-------
+1 0 3 2            2 1 0
+
+yes                no
+
+
+
+
+

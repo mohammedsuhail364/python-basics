@@ -1,0 +1,18 @@
+1)write a python program to build a number guessing games where two players are involved first player has to generate a random integer number and second player guess the number  if player 2 guess the number right increase his score by 100 for first chance if the player goes wrong then the system gives a second chance by giving the clue of random number is odd or even if the second guess is right add 50 points no more than two chances are encouraging it is aways encourage to as the player 2 if she/he needs a second chance if yes then give second chance else skip to the next iteration by first chance is the guess goes wrong a negative score of 50 happens by second chance if the goes wrong then negative score give 100 this guessing to happen all also if the user enters q any time then stop and exit.
+2)minion game.
+3)to implement rock,paper,scissors where two playes jas and jos ,jas is computer and jos is you rock 
+
+if __name__ == '__main__':
+    n = int(input())
+    student_marks = {}
+    li=[]
+    for _ in range(n):
+        name, *line = input().split()
+        scores = list(map(float, line))
+        student_marks[name] = scores
+        li.append([name,scores])
+    query_name = input()
+    for i in range(len(li)):
+        if li[i][0]==query_name:
+            a=sum(li[i][1])/len(li[i][1])
+            print("%0.2f"%a)
